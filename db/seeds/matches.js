@@ -1,13 +1,16 @@
+exports.seed = knex => knex('users').del()
 
-exports.seed = function(knex, Promise) {
-  // Deletes ALL existing entries
-  return knex('table_name').del()
-    .then(function () {
-      // Inserts seed entries
-      return knex('table_name').insert([
-        {id: 1, colName: 'rowValue1'},
-        {id: 2, colName: 'rowValue2'},
-        {id: 3, colName: 'rowValue3'}
-      ]);
-    });
-};
+    .then(() => knex('users').insert([
+      {
+        id: 1,
+        user_id1: 1,
+        user_id2: 2,
+        is_matched: true,
+      },
+      {
+        id: 2,
+        user_id1: 3,
+        user_id2: 4,
+        is_matched: false,
+      },
+    ]));

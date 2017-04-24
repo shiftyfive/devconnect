@@ -1,8 +1,8 @@
 exports.up = (knex) => {
-  return knex.schema.createTable('matches', (table) => {
+  knex.schema.createTable('matches', (table) => {
     table.increments();
-    table.foreign('user_id1').refrences('users.id');
-    table.foreign('user_id2').references('users.id');
+    table.integer('user_id1').refrences('users.id').notNullable();
+    table.integer('user_id2').references('users.id');
     table.bool('is_matched');
   });
 };

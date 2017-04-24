@@ -1,9 +1,9 @@
 exports.up = (knex) => {
-  return knex.schema.createTable('matches', (table) => {
+  return knex.schema.createTable('conversations', (table) => {
     table.increments();
-    table.foreign('match_id').refrences(matches.id);
+    table.integer('match_id').refrences(matches.id);
   });
 };
 exports.down = (knex) => {
-  knex.schema.dropTable('matches');
+  knex.schema.dropTable('conversations');
 };

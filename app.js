@@ -4,39 +4,25 @@ if (process.env.NODE_ENV !== 'production' && !process.env.IS_BUILD) {
   require('dotenv').config()
 }
 
-app.disable('x-powered-by');
-
 const express = require('express');
 const path = require('path');
 const favicon = require('serve-favicon');
 const logger = require('morgan');
 const cookieParser = require('cookie-parser');
-const bodyParser = require('body-parser');
-const bodyParser = require('body-parser');
 const cookieSession = require('cookie-session');
+const bodyParser = require('body-parser');
 const morgan = require('morgan');
-
-switch (app.get('env')) {
-  case 'development':
-    app.use(morgan('dev'));
-    break;
-
-  case 'production':
-    app.use(morgan('short'));
-    break;
-
-  default:
-}
 
 var index = require('./routes/index');
 var users = require('./routes/users');
 
 var app = express();
 
+app.disable('x-powered-by');
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
-
 
 app.enable('trust proxy');
 app.use(logger('dev'));
@@ -46,12 +32,6 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
-
-app.use(cookieSession({
-  name: 'bookshelf',
-  secret: process.env.SESSION_SECRET,
-  secure: app.get('env') === 'production'
-}));
 
 app.use('/', index);
 app.use('/users', users);

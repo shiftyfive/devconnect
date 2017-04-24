@@ -1,6 +1,6 @@
-exports.seed = knex => knex('users').del()
+exports.seed = knex => knex('matches').del()
 
-    .then(() => knex('users').insert([
+    .then(() => knex('matches').insert([
       {
         id: 1,
         user_id1: 1,

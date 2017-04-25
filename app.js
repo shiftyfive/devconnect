@@ -41,6 +41,10 @@ app.use(cookieSession({
 // uncomment after placing your favicon in /public
 // app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 
+app.use((req, res, next) => {
+  if (req.session) res.locals.user = req.session
+  next()
+})
 app.use('/', index);
 app.use('/users', users);
 app.use('/session', session);

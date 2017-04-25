@@ -20,10 +20,13 @@
 		<title>DevConnect</title>
   </head>
   <body>
-    {{> navbar }}
-    <form action="/session/{{ this.id }}?_method=DELETE" method="POST">
-      <input type="submit" name="delete" value="Signout of account">
-    </form>
+
+    {{#if user.userId }}
+      {{>signedInNavbar }}
+    {{else}}
+      {{>signedOutNavbar }}
+    {{/if }}
+
     {{{body}}}
   </body>
 </html>

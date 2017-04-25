@@ -33,8 +33,9 @@ router.post('/', (req, res, next) => {
       const user = users[0]
 
       delete user.hashed_password
-      console.log(user);
-      res.send(user)
+      req.session.userId = user.id
+
+      res.redirect(`/users/${user.id}`)
     })
 })
 

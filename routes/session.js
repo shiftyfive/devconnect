@@ -54,11 +54,6 @@ router.post('/new', (req, res, next) => {
 })
 
 router.delete('/', (req, res, next) => {
-  delete req.session
-  res.status(200).json(true)
-})
-
-router.delete('/', (req, res, next) => {
  req.session = null
  res.redirect('/')
 })

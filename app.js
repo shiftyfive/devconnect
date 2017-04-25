@@ -3,7 +3,6 @@ if (process.env.NODE_ENV !== 'production' && !process.env.IS_BUILD) {
 }
 
 const express = require('express');
-const http = require('http').Server(app);
 const path = require('path');
 const favicon = require('serve-favicon');
 const logger = require('morgan');
@@ -16,9 +15,11 @@ const morgan = require('morgan');
 const index = require('./routes/index');
 const users = require('./routes/users');
 const chat = require('./routes/chat');
-const friends = require('./routes/friends');
+// const friends = require('./routes/friends');
 
 const app = express();
+// const http = require('http').Server(app);
+
 
 app.disable('x-powered-by');
 

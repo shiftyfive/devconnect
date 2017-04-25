@@ -5,6 +5,13 @@ const knex = require('../db')
 const bcrypt = require('bcrypt-as-promised')
 const router = express.Router()
 
+router.get('/:id', (req, res, next) => {
+  let id = req.params.id
+  db('users').select('*').where({ id }).first().then(user => {
+    res.render('users/profile', { user })
+  })
+})
+
 router.post('/', (req, res, next) => {
   if (req.body.password !== req.body.confirm) {
     res.send('Password fields are not matching!')

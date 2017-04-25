@@ -53,8 +53,10 @@ app.use('/users', users);
 app.use('/session', session);
 app.use('/chats', chat);
 
+
 app.use('/chat', chat);
 app.use('/session', session)
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

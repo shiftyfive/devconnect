@@ -43,8 +43,9 @@ app.use(cookieSession({
 
 app.use('/', index);
 app.use('/users', users);
-app.use('/chat', chat);
-app.use('/session', session)
+app.use('/session', session);
+app.use('/chats', chat);
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

@@ -3,7 +3,6 @@ if (process.env.NODE_ENV !== 'production' && !process.env.IS_BUILD) {
 }
 
 const express = require('express');
-const http = require('http').Server(app);
 const path = require('path');
 const favicon = require('serve-favicon');
 const logger = require('morgan');

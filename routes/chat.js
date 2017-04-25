@@ -4,7 +4,9 @@ const io = require('../lib/io.js');
 
 const router = express.Router();
 
-
+// app.get('/', (req, res, render) => {
+//   res.render('')
+// })
 
 router.get('/', (req, res) => {
   res.render('chats');

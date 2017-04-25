@@ -17,20 +17,6 @@ router.get('/', (req, res, next) => {
 router.post('/new', (req, res, next) => {
   const { user_name, password } = req.body;
 
-  // if (!email || !email.trim()) {
-  //   return next({
-  //     status: 200,
-  //     message: 'Email must not be blank'
-  //   });
-  // }
-  //
-  // if (!password) {
-  //   return next({
-  //     status: 200,
-  //     message: 'Password must not be blank'
-  //   });
-  // }
-
   let user;
 
   knex('users')

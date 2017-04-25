@@ -13,6 +13,7 @@ router.get('/:id', (req, res, next) => {
   })
 })
 
+// POST to create user account
 router.post('/', (req, res, next) => {
   if (req.body.password !== req.body.confirm) {
     res.send('Password fields are not matching!')

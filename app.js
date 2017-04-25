@@ -11,16 +11,14 @@ const cookieParser = require('cookie-parser');
 const cookieSession = require('cookie-session');
 const bodyParser = require('body-parser');
 const morgan = require('morgan');
-
+const io = require('socket.io')(express);
 const index = require('./routes/index');
 const users = require('./routes/users');
 const chat = require('./routes/chat');
 const session = require('./routes/session');
 // const friends = require('./routes/friends');
-
 const app = express();
 // const http = require('http').Server(app);
-
 
 app.disable('x-powered-by');
 

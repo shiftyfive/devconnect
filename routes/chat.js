@@ -4,6 +4,7 @@ const io = require('../lib/io.js');
 
 const router = express.Router();
 
+
 router.get('/', (req, res) => {
   res.render('chats');
 });
@@ -20,6 +21,11 @@ io.on('connection', (socket) => {
     console.log(`message: ${msg}`);
   });
 });
+
+
+app.get('/users/:id/chat') {
+  res.sendFile(__diname + '/')
+}
 
 
 module.exports = router;

@@ -14,33 +14,33 @@ router.get('/', (req, res, next) => {
   }
 })
 
-router.post('/', (req, res, next) => {
-  const { email, password } = req.body;
+router.post('/new', (req, res, next) => {
+  const { user_name, password } = req.body;
 
-  if (!email || !email.trim()) {
-    return next({
-      status: 200,
-      message: 'Email must not be blank'
-    });
-  }
-
-  if (!password) {
-    return next({
-      status: 200,
-      message: 'Password must not be blank'
-    });
-  }
+  // if (!email || !email.trim()) {
+  //   return next({
+  //     status: 200,
+  //     message: 'Email must not be blank'
+  //   });
+  // }
+  //
+  // if (!password) {
+  //   return next({
+  //     status: 200,
+  //     message: 'Password must not be blank'
+  //   });
+  // }
 
   let user;
 
   knex('users')
-    .where('email', email)
+    .where('user_name', user_name)
     .first()
     .then((row) => {
       if (!row) {
         throw {
           status: 400,
-          message: 'Bad email or password'
+          message: 'Bad username or password'
         };
       }
 
@@ -52,9 +52,9 @@ router.post('/', (req, res, next) => {
       delete user.hashed_password;
 
       req.session.userId = user.id
-      let id = req.session.userId
+      console.log(user, req.session);
 
-      res.redirect(`/friends/profile/${id}`);
+      res.redirect(`/users/${user.id}`);
     })
     .catch(bcrypt.MISMATCH_ERROR, () => {
     throw {

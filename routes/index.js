@@ -6,7 +6,7 @@ const bcrypt = require('bcrypt-as-promised')
 const router = express.Router()
 
 router.get('/login', (req, res, next) => {
-  res.render('signin')
+  res.render('login')
 })
 
 router.get('/', (req, res, next) => {

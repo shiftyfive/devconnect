@@ -7,8 +7,9 @@ const router = express.Router()
 
 router.get('/:id', (req, res, next) => {
   let id = req.params.id
-  db('users').select('*').where({ id }).first().then(user => {
-    res.render('users/profile', { user })
+  knex('users').select('*').where({ id }).then(user => {
+    console.log(user);
+    res.render('friends/profile', { user })
   })
 })
 

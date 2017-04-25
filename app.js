@@ -1,28 +1,31 @@
-'use strict'
-
 if (process.env.NODE_ENV !== 'production' && !process.env.IS_BUILD) {
-  require('dotenv').config()
+  require('dotenv').config();
 }
 
 const express = require('express');
+const http = require('http').Server(app);
 const path = require('path');
 const favicon = require('serve-favicon');
 const logger = require('morgan');
+var hbs = require('hbs');
 const cookieParser = require('cookie-parser');
 const cookieSession = require('cookie-session');
 const bodyParser = require('body-parser');
 const morgan = require('morgan');
 
-var index = require('./routes/index');
-var users = require('./routes/users');
+const index = require('./routes/index');
+const users = require('./routes/users');
+const chat = require('./routes/chat');
+const friends = require('./routes/friends');
 
-var app = express();
+const app = express();
 
 app.disable('x-powered-by');
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
+hbs.registerPartials(__dirname + '/views/shared');
 
 app.enable('trust proxy');
 app.use(logger('dev'));
@@ -31,14 +34,15 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 // uncomment after placing your favicon in /public
-//app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
+// app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 
 app.use('/', index);
 app.use('/users', users);
+app.use('/chat', chat);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
-  var err = new Error('Not Found');
+  const err = new Error('Not Found');
   err.status = 404;
   next(err);
 });

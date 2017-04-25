@@ -11,7 +11,6 @@ const cookieParser = require('cookie-parser');
 const cookieSession = require('cookie-session');
 const bodyParser = require('body-parser');
 const morgan = require('morgan');
-
 const index = require('./routes/index');
 const users = require('./routes/users');
 const chat = require('./routes/chat');
@@ -56,12 +55,6 @@ app.use('/chats', chat);
 
 app.use('/chat', chat);
 app.use('/session', session)
-<<<<<<< HEAD
-=======
->>>>>>> added temp routes for chat and friends list
->>>>>>> added temp routes for chat and friends list
-=======
->>>>>>> rebased branch to catchup withmaster
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

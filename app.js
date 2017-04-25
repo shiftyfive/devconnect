@@ -1,5 +1,3 @@
-'use strict'
-
 if (process.env.NODE_ENV !== 'production' && !process.env.IS_BUILD) {
   require('dotenv').config()
 }
@@ -13,11 +11,13 @@ const cookieParser = require('cookie-parser');
 const cookieSession = require('cookie-session');
 const bodyParser = require('body-parser');
 const morgan = require('morgan');
+const io = require('socket.io')(express);
 
-var index = require('./routes/index');
-var users = require('./routes/users');
+const index = require('./routes/index');
+const users = require('./routes/users');
+const chat = require('./routes/chat');
 
-var app = express();
+const app = express();
 
 app.disable('x-powered-by');
 

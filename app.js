@@ -15,6 +15,7 @@ const morgan = require('morgan');
 const index = require('./routes/index');
 const users = require('./routes/users');
 const chat = require('./routes/chat');
+const session = require('./routes/session');
 // const friends = require('./routes/friends');
 
 const app = express();
@@ -40,6 +41,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', index);
 app.use('/users', users);
 app.use('/chat', chat);
+app.use('/session', session)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

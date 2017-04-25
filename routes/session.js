@@ -1,12 +1,12 @@
 'use strict';
 
 const express = require('express');
-const knex = require('../knex')
+const knex = require('../db')
 const bcrypt = require('bcrypt-as-promised')
 const router = express.Router();
 
 
-router.get('/session', (req, res, next) => {
+router.get('/', (req, res, next) => {
   if (req.session.userId) {
     res.status(200).json(true)
   } else {
@@ -14,7 +14,7 @@ router.get('/session', (req, res, next) => {
   }
 })
 
-router.post('/session', (req, res, next) => {
+router.post('/', (req, res, next) => {
   const { email, password } = req.body;
 
   if (!email || !email.trim()) {
@@ -51,9 +51,10 @@ router.post('/session', (req, res, next) => {
     .then(() => {
       delete user.hashed_password;
 
-      req.session.userId = user.id;
+      req.session.userId = user.id
+      let id = req.session.userId
 
-      res.send(user);
+      res.redirect(`/friends/profile/${id}`);
     })
     .catch(bcrypt.MISMATCH_ERROR, () => {
     throw {
@@ -66,7 +67,7 @@ router.post('/session', (req, res, next) => {
     });
 })
 
-router.delete('/session', (req, res, next) => {
+router.delete('/', (req, res, next) => {
   delete req.session
   res.status(200).json(true)
 })

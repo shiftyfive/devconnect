@@ -19,6 +19,9 @@
 		<title>{{title}}</title>
   </head>
   <body>
+    <form action="/session/{{ this.id }}?_method=DELETE" method="POST">
+      <input type="submit" name="delete" value="Signout of account">
+    </form>
     {{> navbar }}
     {{{body}}}
   </body>

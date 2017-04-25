@@ -72,4 +72,9 @@ router.delete('/', (req, res, next) => {
   res.status(200).json(true)
 })
 
+router.delete('/', (req, res, next) => {
+ req.session = null
+ res.redirect('/')
+})
+
 module.exports = router;

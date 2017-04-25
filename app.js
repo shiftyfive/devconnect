@@ -51,17 +51,17 @@ app.use((req, res, next) => {
 })
 app.use('/', index);
 app.use('/users', users);
-<<<<<<< HEAD
 app.use('/session', session);
 app.use('/chats', chat);
 
-=======
 app.use('/chat', chat);
-<<<<<<< HEAD
 app.use('/session', session)
+<<<<<<< HEAD
 =======
 >>>>>>> added temp routes for chat and friends list
 >>>>>>> added temp routes for chat and friends list
+=======
+>>>>>>> rebased branch to catchup withmaster
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

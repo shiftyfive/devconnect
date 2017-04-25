@@ -13,4 +13,7 @@ exports.seed = knex => knex('matches').del()
         user_id2: 4,
         is_matched: false,
       },
-    ]));
+    ])).then(() => {
+      return knex.raw(
+        "SELECT setval('matches_id_seq', (SELECT MAX(id) FROM matches));"
+      )});

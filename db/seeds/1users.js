@@ -57,6 +57,9 @@ exports.seed = knex => knex('users').del()
         user_name: 'Regional_Manager',
         email: 'd.schrute@dmifflin',
         hashed_password: '',
-      },
+      }
 
-    ]));
+    ])).then(() => {
+      return knex.raw(
+        "SELECT setval('users_id_seq', (SELECT MAX(id) FROM users));"
+      )});

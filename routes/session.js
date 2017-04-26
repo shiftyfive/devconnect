@@ -40,7 +40,7 @@ router.post('/new', (req, res, next) => {
 
       req.session.userId = user.id
 
-      res.redirect(`/users/${user.id}`);
+      res.redirect('/users');
     })
     .catch(bcrypt.MISMATCH_ERROR, () => {
     throw {

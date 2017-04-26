@@ -16,9 +16,9 @@ const authorize = (req, res, next) => {
 }
 
 // Show your personal profile
-router.get('/:id', authorize, (req, res, next) => {
-  // const { userId } = req.session
-  let id = req.params.id
+router.get('/', authorize, (req, res, next) => {
+  const { userId } = req.session
+  const id = userId
 
   knex('users').select('*').where({ id }).then(user => {
 

@@ -13,6 +13,14 @@ router.get('/:id', (req, res, next) => {
   })
 })
 
+router.get('/:id/edit', (req, res, next) => {
+  var id = req.session.id
+  db('users').select('*').where({ id }).first().then(user => {
+    console.log(user)
+    res.render('user/editprofile', { user })
+  })
+})
+
 router.post('/', (req, res, next) => {
   if (req.body.password !== req.body.confirm) {
     res.send('Password fields are not matching!')

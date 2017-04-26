@@ -2,8 +2,8 @@
 	<div class="container">
 		<div class="row main">
 			<div class="main-login main-center">
-			<h5>Please create an account.</h5>
-				<form method="POST" action="/users/{{ user.id }}?_method=PUT">
+			<h5>Edit your account details</h5>
+				<form method="POST" action="/users?_method=PUT" class="well">
 
 					<div class="form-group">
 						<label for="name" class="cols-sm-2 control-label">First Name</label>
@@ -50,7 +50,7 @@
 						<div class="cols-sm-10">
 							<div class="input-group">
 								<span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
-								<input type="text" class="form-control" name="img_url" id="img_url"  placeholder="Enter picture URL">
+								<input type="text" class="form-control" name="img_url" id="img_url" value="{{ user.img_url }}" placeholder="Enter picture URL">
 							</div>
 						</div>
 					</div>
@@ -60,7 +60,7 @@
 						<div class="cols-sm-10">
 							<div class="input-group">
 								<span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
-								<input type="text" class="form-control" name="bio" id="bio"  placeholder="Share who you are">
+								<input type="text" class="form-control" name="bio" id="bio" value="{{ user.bio }}" placeholder="Share who you are">
 							</div>
 						</div>
 					</div>
@@ -70,7 +70,7 @@
 						<div class="cols-sm-10">
 							<div class="input-group">
 								<span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
-								<input type="text" class="form-control" name="skills" id="skills"  placeholder="What are your skills">
+								<input type="text" class="form-control" name="skills" id="skills" value="{{ user.skills }}" placeholder="What are your skills">
 							</div>
 						</div>
 					</div>

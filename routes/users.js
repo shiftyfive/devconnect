@@ -14,16 +14,6 @@ const authorize = (req, res, next) => {
   next()
 }
 
-// From SNacks
-router.get('/:id/edit', (req, res, next) => {
-  let id = req.params.id
-  db('snacks').select('*').where({ id }).first()
-  .then(snack => {
-    res.render('snacks/edit', { snack })
-  })
-})
-
-
 router.get('/edit', authorize, (req, res, next) => {
   const { userId } = req.session
   const id = userId
@@ -42,6 +32,25 @@ router.get('/', authorize, (req, res, next) => {
   knex('users').select('*').where({ id }).then(user => {
 
     res.render('friends/profile', { user })
+  })
+})
+
+// Edit user profile
+router.put('/users', (req, res, next) => {
+  const { userId } = req.session
+  const id = userId
+
+  let user = {
+    first_name: req.body.first_name,
+    last_name: req.body.last_name,
+    user_name: req.body.user_name,
+    email: req.body.email,
+    img_url: req.body.img_url,
+    bio: req.body.bio,
+    skills: req.body.skills,
+  }
+  knex('users').update(user, '*').where({ id }).then(user => {
+    res.redirect('/users')
   })
 })
 

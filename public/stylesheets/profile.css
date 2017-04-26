@@ -2,8 +2,16 @@
   text-align: center;
   color: green;
 }
-.profile-img {
+.center-block {
   max-width: 300px;
   max-height: 300px;
+
+}
+
+.profile-container{
+  background-color: white;
+}
+
+.profile-content{
   text-align: center;
 }

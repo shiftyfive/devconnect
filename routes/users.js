@@ -5,22 +5,28 @@ const knex = require('../db')
 const bcrypt = require('bcrypt-as-promised')
 const router = express.Router()
 
-router.get('/:id', (req, res, next) => {
-  let id = req.params.id
+// Middleware that kicks user to root if there's no session
+// BUG: we still need to prevent user from viewing another user's pages
+const authorize = (req, res, next) => {
+  if (!req.session.userId) {
+    res.redirect('/')
+  }
+
+  next()
+}
+
+// Show your personal profile
+router.get('/', authorize, (req, res, next) => {
+  const { userId } = req.session
+  const id = userId
+
   knex('users').select('*').where({ id }).then(user => {
-    console.log(user);
+
     res.render('friends/profile', { user })
   })
 })
 
-router.get('/:id/edit', (req, res, next) => {
-  var id = req.session.id
-  db('users').select('*').where({ id }).first().then(user => {
-    console.log(user)
-    res.render('user/editprofile', { user })
-  })
-})
-
+// Create user account
 router.post('/', (req, res, next) => {
   if (req.body.password !== req.body.confirm) {
     res.send('Password fields are not matching!')
@@ -40,9 +46,11 @@ router.post('/', (req, res, next) => {
       const user = users[0]
 
       delete user.hashed_password
-      console.log(user);
-      res.send(user)
+      req.session.userId = user.id
+
+      res.redirect(`/users/${user.id}`)
     })
 })
 
 module.exports = router;
+Contact GitHub API Training Shop Blog About

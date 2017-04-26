@@ -5,7 +5,7 @@ const knex = require('../db')
 const bcrypt = require('bcrypt-as-promised')
 const router = express.Router();
 
-
+// ?????
 router.get('/', (req, res, next) => {
   if (req.session.userId) {
     res.status(200).json(true)
@@ -14,22 +14,9 @@ router.get('/', (req, res, next) => {
   }
 })
 
+// Login and create session
 router.post('/new', (req, res, next) => {
   const { user_name, password } = req.body;
-
-  // if (!email || !email.trim()) {
-  //   return next({
-  //     status: 200,
-  //     message: 'Email must not be blank'
-  //   });
-  // }
-  //
-  // if (!password) {
-  //   return next({
-  //     status: 200,
-  //     message: 'Password must not be blank'
-  //   });
-  // }
 
   let user;
 
@@ -52,9 +39,8 @@ router.post('/new', (req, res, next) => {
       delete user.hashed_password;
 
       req.session.userId = user.id
-      console.log(user, req.session);
 
-      res.redirect(`/users/${user.id}`);
+      res.redirect('/users');
     })
     .catch(bcrypt.MISMATCH_ERROR, () => {
     throw {
@@ -67,11 +53,7 @@ router.post('/new', (req, res, next) => {
     });
 })
 
-router.delete('/', (req, res, next) => {
-  delete req.session
-  res.status(200).json(true)
-})
-
+// Logout and delete session
 router.delete('/', (req, res, next) => {
  req.session = null
  res.redirect('/')

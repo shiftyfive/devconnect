@@ -53,4 +53,4 @@ router.post('/', (req, res, next) => {
 })
 
 module.exports = router;
-Contact GitHub API Training Shop Blog About
+// Contact GitHub API Training Shop Blog About

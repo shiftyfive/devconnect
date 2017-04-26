@@ -3,14 +3,14 @@
 		<div class="row main">
 			<div class="main-login main-center">
 			<h5>Please create an account.</h5>
-				<form class="" method="post" action="/users">
+				<form method="POST" action="/users/{{ user.id }}?_method=PUT">
 
 					<div class="form-group">
 						<label for="name" class="cols-sm-2 control-label">First Name</label>
 						<div class="cols-sm-10">
 							<div class="input-group">
 								<span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
-								<input type="text" class="form-control" name="first_name" id="first_name"  placeholder="Enter your first name" required>
+								<input type="text" class="form-control" name="first_name" id="first_name" value="{{ user.first_name }}" required>
 							</div>
 						</div>
 					</div>
@@ -20,7 +20,7 @@
 						<div class="cols-sm-10">
 							<div class="input-group">
 								<span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
-								<input type="text" class="form-control" name="last_name" id="last_name"  placeholder="Enter your last name" required>
+								<input type="text" class="form-control" name="last_name" id="last_name" value="{{ user.last_name }}" required>
 							</div>
 						</div>
 					</div>
@@ -30,7 +30,7 @@
 						<div class="cols-sm-10">
 							<div class="input-group">
 								<span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
-								<input type="text" class="form-control" name="user_name" id="user_name"  placeholder="Enter your user name" required>
+								<input type="text" class="form-control" name="user_name" id="user_name" value="{{ user.user_name }}" required>
 							</div>
 						</div>
 					</div>
@@ -40,27 +40,37 @@
 						<div class="cols-sm-10">
 							<div class="input-group">
 								<span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
-								<input type="text" class="form-control" name="email" id="email"  placeholder="Enter your email" required>
+								<input type="text" class="form-control" name="email" id="email" value="{{ user.email }}" required>
 							</div>
 						</div>
 					</div>
 
 					<div class="form-group">
-						<label for="password" class="cols-sm-2 control-label">Password</label>
+						<label for="img_url" class="cols-sm-2 control-label">Image URL</label>
 						<div class="cols-sm-10">
 							<div class="input-group">
-								<span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
-								<input type="password" class="form-control" name="password" id="password"  placeholder="Enter your password" required>
+								<span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
+								<input type="text" class="form-control" name="img_url" id="img_url"  placeholder="Enter picture URL">
 							</div>
 						</div>
 					</div>
 
 					<div class="form-group">
-						<label for="confirm" class="cols-sm-2 control-label">Confirm Password</label>
+						<label for="img_url" class="cols-sm-2 control-label">Add a Bio</label>
 						<div class="cols-sm-10">
 							<div class="input-group">
-								<span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
-								<input type="password" class="form-control" name="confirm" id="confirm"  placeholder="Confirm your password" required>
+								<span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
+								<input type="text" class="form-control" name="bio" id="bio"  placeholder="Share who you are">
+							</div>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label for="skills" class="cols-sm-2 control-label">List Your Skills</label>
+						<div class="cols-sm-10">
+							<div class="input-group">
+								<span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
+								<input type="text" class="form-control" name="skills" id="skills"  placeholder="What are your skills">
 							</div>
 						</div>
 					</div>

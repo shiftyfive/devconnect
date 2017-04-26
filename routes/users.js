@@ -6,7 +6,6 @@ const bcrypt = require('bcrypt-as-promised')
 const router = express.Router()
 
 // Middleware that kicks user to root if there's no session
-// BUG: we still need to prevent user from viewing another user's pages
 const authorize = (req, res, next) => {
   if (!req.session.userId) {
     res.redirect('/')
@@ -14,6 +13,26 @@ const authorize = (req, res, next) => {
 
   next()
 }
+
+// From SNacks
+router.get('/:id/edit', (req, res, next) => {
+  let id = req.params.id
+  db('snacks').select('*').where({ id }).first()
+  .then(snack => {
+    res.render('snacks/edit', { snack })
+  })
+})
+
+
+router.get('/edit', authorize, (req, res, next) => {
+  const { userId } = req.session
+  const id = userId
+
+  knex('users').select('*').where({ id }).first()
+  .then(user => {
+    res.render('friends/edit', { user })
+  })
+})
 
 // Show your personal profile
 router.get('/', authorize, (req, res, next) => {

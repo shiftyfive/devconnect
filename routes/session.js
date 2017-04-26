@@ -5,7 +5,7 @@ const knex = require('../db')
 const bcrypt = require('bcrypt-as-promised')
 const router = express.Router();
 
-// ?????
+// Checks if session exists, to do auth stuff on website
 router.get('/', (req, res, next) => {
   if (req.session.userId) {
     res.status(200).json(true)
@@ -39,6 +39,7 @@ router.post('/new', (req, res, next) => {
       delete user.hashed_password;
 
       req.session.userId = user.id
+      console.log(res.locals.user);
 
       res.redirect('/users');
     })

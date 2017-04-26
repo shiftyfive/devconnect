@@ -15,9 +15,12 @@ const authorize = (req, res, next) => {
 }
 
 // Index all connections the user has
-// router.get()
-//
-//
+router.get('/', authorize, (req, res, next) => {
+  const { userId } = req.session
+  const id = userId
+})
+
+
 
 // // Index all new connections the user could have
 // router.get()

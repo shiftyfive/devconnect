@@ -1,4 +1,9 @@
-.bongo {
+.main-title-profile {
   text-align: center;
   color: green;
+}
+.profile-img {
+  max-width: 300px;
+  max-height: 300px;
+  text-align: center;
 }

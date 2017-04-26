@@ -8,6 +8,9 @@ exports.seed = knex => knex('users').del()
         last_name: 'Mathews',
         user_name: 'Lonedawg007',
         email: 'AmericanHockeyJesus@gmail.com',
+        img_url:'http://keenthemes.com/preview/metronic/theme/assets/pages/media/profile/profile_user.jpg',
+        bio:'Grew up in a small town in Oregon, but always wished I was from Texas.',
+        skills:'JavaScript, HTML, CSS, your mom',
         hashed_password: '$2a$12$C9AYYmcLVGYlGoO4vSZTPud9ArJwbGRsJ6TUsNULzR48z8fOnTXbS',
       },
       {

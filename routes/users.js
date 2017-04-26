@@ -1,4 +1,4 @@
-'use strict';
+'use strict'
 
 const express = require('express')
 const knex = require('../db')
@@ -14,13 +14,14 @@ const authorize = (req, res, next) => {
   next()
 }
 
+// Pull up edit form for user profile
 router.get('/edit', authorize, (req, res, next) => {
   const { userId } = req.session
   const id = userId
 
   knex('users').select('*').where({ id }).first()
   .then(user => {
-    res.render('friends/edit', { user })
+    res.render('users/edit', { user })
   })
 })
 
@@ -31,11 +32,11 @@ router.get('/', authorize, (req, res, next) => {
 
   knex('users').select('*').where({ id }).then(user => {
 
-    res.render('friends/profile', { user })
+    res.render('users/profile', { user })
   })
 })
 
-// Edit user profile
+// Update user profile after you submit edits
 router.put('/', (req, res, next) => {
   const { userId } = req.session
   const id = userId

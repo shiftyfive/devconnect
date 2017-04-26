@@ -15,6 +15,7 @@ const index = require('./routes/index');
 const users = require('./routes/users');
 const chat = require('./routes/chat');
 const session = require('./routes/session');
+const connections = require('./routes/connections');
 const methodOverride = require('method-override')
 const app = express();
 // const friends = require('./routes/friends');
@@ -53,6 +54,7 @@ app.use('/', index);
 app.use('/users', users);
 app.use('/session', session);
 app.use('/chats', chat);
+app.use('/connections', connections)
 
 
 // catch 404 and forward to error handler

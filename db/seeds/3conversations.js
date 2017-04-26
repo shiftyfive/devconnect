@@ -3,7 +3,7 @@ exports.seed = knex => knex('conversations').del()
     .then(() => knex('conversations').insert([
       {
         id: 1,
-        match_id: 1,
+        conection_id: 1,
       },
     ])).then(() => {
       return knex.raw(

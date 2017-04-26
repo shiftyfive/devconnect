@@ -1,7 +1,7 @@
 exports.up = (knex) => {
   return knex.schema.createTable('conversations', (table) => {
     table.increments();
-    table.integer('match_id').references('matches.id');
+    table.integer('conection_id').references('connections.id');
   });
 };
 exports.down = (knex) => {

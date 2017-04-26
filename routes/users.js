@@ -5,15 +5,28 @@ const knex = require('../db')
 const bcrypt = require('bcrypt-as-promised')
 const router = express.Router()
 
-router.get('/:id', (req, res, next) => {
+// Middleware that kicks user to root if there's no session
+// BUG: we still need to prevent user from viewing another user's pages
+const authorize = (req, res, next) => {
+  if (!req.session.userId) {
+    res.redirect('/')
+  }
+
+  next()
+}
+
+// Show your personal profile
+router.get('/:id', authorize, (req, res, next) => {
+  // const { userId } = req.session
   let id = req.params.id
+
   knex('users').select('*').where({ id }).then(user => {
-    console.log(user);
+
     res.render('friends/profile', { user })
   })
 })
 
-// POST to create user account
+// Create user account
 router.post('/', (req, res, next) => {
   if (req.body.password !== req.body.confirm) {
     res.send('Password fields are not matching!')

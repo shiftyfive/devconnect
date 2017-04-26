@@ -5,7 +5,7 @@ const knex = require('../db')
 const bcrypt = require('bcrypt-as-promised')
 const router = express.Router();
 
-
+// ?????
 router.get('/', (req, res, next) => {
   if (req.session.userId) {
     res.status(200).json(true)
@@ -14,6 +14,7 @@ router.get('/', (req, res, next) => {
   }
 })
 
+// Login and create session
 router.post('/new', (req, res, next) => {
   const { user_name, password } = req.body;
 
@@ -38,7 +39,6 @@ router.post('/new', (req, res, next) => {
       delete user.hashed_password;
 
       req.session.userId = user.id
-      console.log(user, req.session);
 
       res.redirect(`/users/${user.id}`);
     })
@@ -53,6 +53,7 @@ router.post('/new', (req, res, next) => {
     });
 })
 
+// Logout and delete session
 router.delete('/', (req, res, next) => {
  req.session = null
  res.redirect('/')

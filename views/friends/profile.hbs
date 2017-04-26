@@ -1,8 +1,8 @@
-<p> This is your profile page </p>
+<h1 class="bongo"> This is your profile page </h1>
 {{#each user }}
 <p>First name:{{first_name}}</p>
 <p>Last name:{{last_name}}</p>
 <p>User name:{{user_name}}</p>
 <p>Email:{{email}}</p>
-<p>Hashed pw:{{hashed_password}}</p>
 {{/each}}
+<a href="/profile/{{ user.id }}/edit" type="button" name="button" class="btn btn-success">Edit Profile</a>

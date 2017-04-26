@@ -36,7 +36,7 @@ router.get('/', authorize, (req, res, next) => {
 })
 
 // Edit user profile
-router.put('/users', (req, res, next) => {
+router.put('/', (req, res, next) => {
   const { userId } = req.session
   const id = userId
 

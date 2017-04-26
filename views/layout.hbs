@@ -22,9 +22,7 @@
   <body>
 
     {{#if user.userId }}
-      {{>signedInNavbar }}
-    {{else}}
-      {{>signedOutNavbar }}
+      {{>navbar }}
     {{/if }}
 
     {{{body}}}

@@ -15,11 +15,14 @@ const index = require('./routes/index');
 const users = require('./routes/users');
 const chat = require('./routes/chat');
 const session = require('./routes/session');
-// const friends = require('./routes/friends');
+const methodOverride = require('method-override')
 const app = express();
+// const friends = require('./routes/friends');
 // const http = require('http').Server(app);
 
 app.disable('x-powered-by');
+
+
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -27,6 +30,7 @@ app.set('view engine', 'hbs');
 hbs.registerPartials(__dirname + '/views/shared');
 
 app.enable('trust proxy');
+app.use(methodOverride('_method'))
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));

@@ -1,6 +1,6 @@
 const express = require('express');
 const knex = require('../db');
-const io = require('../lib/io.js');
+const io = require('socket.io')();
 
 const router = express.Router();
 

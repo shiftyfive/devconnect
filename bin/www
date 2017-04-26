@@ -26,10 +26,7 @@ const server = http.createServer(app);
  * Listen on provided port, on all network interfaces.
  */
 
-let listener = server.listen(port);
-
 const listener = server.listen(port);
-let listener = server.listen(port);
 
 io.attach(listener);
 server.listen(port);
@@ -41,16 +38,16 @@ server.on('listening', onListening);
  */
 
 function normalizePort(val) {
-  const port = parseInt(val, 10);
+  const normalizePort = parseInt(val, 10);
 
-  if (isNaN(port)) {
+  if (isNaN(normalizePort)) {
     // named pipe
     return val;
   }
 
-  if (port >= 0) {
+  if (normalizePort >= 0) {
     // port number
-    return port;
+    return normalizePort;
   }
 
   return false;

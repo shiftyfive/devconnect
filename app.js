@@ -13,7 +13,6 @@ const bodyParser = require('body-parser');
 const morgan = require('morgan');
 const index = require('./routes/index');
 const users = require('./routes/users');
-const chat = require('./routes/chat');
 const session = require('./routes/session');
 const methodOverride = require('method-override');
 // const friends = require('./routes/friends');
@@ -51,11 +50,7 @@ app.use((req, res, next) => {
 app.use('/', index);
 app.use('/users', users);
 app.use('/session', session);
-app.use('/chats', chat);
-
-
-app.use('/chat', chat);
-app.use('/session', session)
+app.use('/session', session);
 
 
 // catch 404 and forward to error handler

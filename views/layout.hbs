@@ -24,22 +24,7 @@
   <body>
 
     {{#if user.userId }}
-      <!-- {{>navbar }} -->
-      <nav class="navbar navbar-default">
-        <div class="container-fluid">
-          <div class="navbar-header">
-            <a class="navbar-brand" href="/">DevConnect</a>
-          </div>
-          <ul class="nav navbar-nav">
-            <li><a href="/connections">Your Connections</a></li>
-            <li><a href="/connections/find">Find Connections</a></li>
-            <li><a href="/users">Profile</a></li>
-            <li><form action="/session?_method=DELETE" method="POST">
-              <button type="submit">Logout</button>
-            </form></li>
-          </ul>
-        </div>
-      </nav>
+      {{>navbar }}
     {{/if }}
 
     {{{body}}}

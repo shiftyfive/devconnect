@@ -20,11 +20,10 @@ router.get('/', authorize, (req, res, next) => {
   const id = userId
 
   knex('users')
-  .select('*')
+  .select('*').whereNot('id', id)
   .then(users => {
-    console.log(users);
-    res.send(users)
-  // res.render('connections/index', { users })
+
+  res.render('connections/index', { users })
   })
 })
 

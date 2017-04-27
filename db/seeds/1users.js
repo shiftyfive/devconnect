@@ -101,7 +101,7 @@ exports.seed = knex => knex('users').del()
         location: 'Portland, OR',
         developer_type: 'Fullstack',
         email: 'bozak.c@gmail.com',
-        img_url: 'http://www.rkomedia.net/wp-content/uploads/2016/09/New-trending-hairstyles-american-styles.jpg',
+            img_url: 'https://s3-media1.fl.yelpcdn.com/bphoto/-am-bVSwjZ5S4MdbjpUCMQ/ls.jpg',
         twitter: 'https://twitter.com/dhh?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor',
         github: 'https://github.com/mbostock',
         linkedin: 'https://www.linkedin.com',

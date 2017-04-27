@@ -26,11 +26,56 @@
 					</div>
 
 					<div class="form-group">
+						<label for="gender" class='cols-sm-2 control-label'>gender</label>
+						<div class="cols-sm-10">
+							<div class="input-group">
+								<span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+								<select class="form-control" id="gender" name="gender">
+									<option value="Female">Female</option>
+									<option value="Male">Male</option>
+									<option value="Other">Other</option>
+								</select>
+							</div>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label for="developer_type" class='cols-sm-2 control-label'>Developer Type</label>
+						<div class="cols-sm-10">
+							<div class="input-group">
+								<span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+								<select class="form-control" id="developer_type" name="developer_type">
+									<option value="Female">Frontend</option>
+									<option value="Male">Backend</option>
+									<option value="Other">Fullstack</option>
+								</select>
+							</div>
+						</div>
+					</div>
+
+					<div class="form-group">
 						<label for="username" class="cols-sm-2 control-label">Username</label>
 						<div class="cols-sm-10">
 							<div class="input-group">
 								<span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
 								<input type="text" class="form-control" name="user_name" id="user_name" value="{{ user.user_name }}" required>
+							</div>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label for="developer_type" class='cols-sm-2 control-label'>Developer Type</label>
+						<div class="cols-sm-10">
+							<div class="input-group">
+								<span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+								<select class="form-control" id="developer_type" name="developer_type">
+									<option value="Seattle, WA">Seattle, WA</option>
+									<option value="Bend, OR">Bend, OR</option>
+									<option value="Portland, OR<">Portland, OR</option>
+									<option value="San Francisco, CA">San Francisco, CA</option>
+									<option value="Detroit, MI">Detroit, MI</option>
+									<option value="Austin, TX">Austin, TX</option>
+								</select>
 							</div>
 						</div>
 					</div>

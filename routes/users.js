@@ -44,6 +44,10 @@ router.put('/', (req, res, next) => {
   let user = {
     first_name: req.body.first_name,
     last_name: req.body.last_name,
+    age: req.body.age,
+    gender: req.body.gender,
+    location: req.body.location,
+    developer_type: req.body.developer_type,
     user_name: req.body.user_name,
     email: req.body.email,
     img_url: req.body.img_url,

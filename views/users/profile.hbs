@@ -1,24 +1,34 @@
 <div class="container profile-container">
 {{#each user }}
-<h1 class="main-title-profile"> {{user_name}} </h1>
-<h3 class="profile-content">{{first_name}} {{last_name}}</h3>
-<hr>
-<img class="profile-img center-block" src={{img_url}}>
-<div class="social-icon col-xs-12">
-  <a href={{twitter}} class="btn btn-social-icon btn-twitter">
-    <span class="fa fa-twitter"></span>
-  </a>
-  <a href={{github}} class="btn btn-social-icon btn-github">
-    <span class="fa fa-github"></span>
-  </a>
-  <a href={{linkedin}} class="btn btn-social-icon btn-linkedin">
-    <span class="fa fa-linkedin"></span>
-  </a>
+<div class="profile-header col-xs-12">
+    <div class="profile-pic col-xs-3">
+      <img class="profile-img" src={{img_url}}>
+    </div>
+  <div class="profile-info col-xs-9">
+    <h1 class="main-title-profile">{{user_name}}</h1>
+    <h3 class="profile-content">{{first_name}} {{last_name}}</h3>
+  </div>
+  <div class="social-icon col-xs-9">
+    <a href={{twitter}} class="btn-social-icon btn-twitter">
+      <span class="fa fa-twitter"></span>
+    </a>
+    <a href={{github}} class="btn-social-icon btn-github">
+      <span class="fa fa-github"></span>
+    </a>
+    <a href={{linkedin}} class="btn-social-icon btn-linkedin">
+      <span class="fa fa-linkedin"></span>
+    </a>
+  </div>
 </div>
-<p class= "profile-content">{{bio}}</p>
-<p class= "profile-content">{{skills}}</p>
-<a href="/users/edit" type="button" name="button" class="btn btn-info">Edit Profile</a>
-{{/each}}
-<br><br>
-<a href="/" type="button" name="button" class="btn btn-success">Homepage</a>
+<div class="profile-body col-xs-12">
+  <div class="sidebar col-xs-3">
+    <div class="edit-btn">
+      <a href="/users/edit" type="button" name="button" class="btn btn-info">Edit Profile</a>
+      <br><br>
+      <a href="/" type="button" name="button" class="btn btn-success">Go Back</a>
+    </div>
+  </div>
+  <div class="profile-bio col-xs-9"><h2>Bio</h2>{{bio}}</div>
+  <div class="profile-skills col-xs-9"><h2>Skills</h2>{{skills}}</div>
+  {{/each}}
 </div>

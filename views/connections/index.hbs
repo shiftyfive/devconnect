@@ -1,11 +1,30 @@
-<div class="container profile-container">
-{{#each user }}
-<h1 class="main-title-profile"> {{user_name}} </h1>
-<h3 class="profile-content">{{first_name}} {{last_name}}</h3>
-<hr>
-<img class="profile-img" src={{img_url}}>
-<br>
-<p class= "profile-content">{{skills}}</p>
-{{/each}}
-<a href="/" type="button" name="button" class="btn btn-success">Homepage</a>
-</div>
+<div class="col-md-12">
+      <!-- <div class="row"> -->
+          {{#each user}}
+          <div class="col-md-6 activity"
+            data-id="{{ users }}"
+            data-category="{{ username }} {{ location }} {{ stack }} {{ age }} {{ gender }}">
+            <div class=" panel panel-default"> <!-- panel default -->
+              <div class="panel-heading"> <!-- panel heading -->
+                <a class="thumb-title" href="./activities/{{id}}">{{title}}</a>
+              </div> <!-- panel heading -->
+              <div class="panel-body text-center"> <!-- panel body -->
+                <div class="col-md-6">
+                  <img class="img_url" src="{{img_url}}" alt="{{username}">
+                </div>
+                <div class="col-md-6 text-center">
+                 <ul class="text-left">
+                   <li class="li-attr">Username: </li>
+                   <li class="li-attr">Location</li>
+                   <li class="li-attr">Stack:</li>
+                   <li class="li-attr">Age:</li>
+                   <li class="li-attr">Gender:</li>
+                 </ul>
+                 <span class="label label-primary">{{username}}</span>
+                </div>
+              </div>
+              </div> <!-- panel body -->
+            </div> <!-- panel default -->
+          <!-- </div> -->
+          {{/each}}
+      </div>

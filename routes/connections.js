@@ -14,33 +14,19 @@ const authorize = (req, res, next) => {
   next()
 }
 
-// Index all connections the user has
+// Index all other users so user csn begin filtering
 router.get('/', authorize, (req, res, next) => {
   const { userId } = req.session
   const id = userId
 
-  // knex('connections')
-  //   .where('user_id1', id)
-  //   .orWhere('user_id2', id)
-  //   .andWhere('is_connected', true)
-  //   .then(connections => {
-  //     let ids = connections.filter(notMyId)
-  //     promise.all(ids) // then get info
-
-  .then(connections => {
-
-    console.log(connections);
-    res.send(connections)
+  knex('users')
+  .select('*')
+  .then(users => {
+    console.log(users);
+    res.send(users)
+  // res.render('connections/index', { users })
   })
 })
-
-// // // Index all new connections the user could have
-// // router.get('/find', (req, res, next) => {
-//
-// })
-//
-// // // Index all pending friend requests a user has
-// // router.get()
 
 
 module.exports = router;

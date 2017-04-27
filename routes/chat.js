@@ -1,24 +1,14 @@
 const express = require('express');
 const knex = require('../db');
-const io = require('../lib/io.js');
+const io = require('../socketApi')
 
 const router = express.Router();
 
 router.get('/', (req, res) => {
   res.render('chats');
+  sendNotification();
 });
 
-io.on('connection', (socket) => {
-  console.log('a user connected');
-  socket.on('disconnect', () => {
-    console.log('user disconnected');
-  });
-});
 
-io.on('connection', (socket) => {
-  socket.on('chat message', (msg) => {
-    console.log(`message: ${msg}`);
-  });
-});
 
 module.exports = router;

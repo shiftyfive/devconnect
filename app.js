@@ -53,7 +53,7 @@ app.use((req, res, next) => {
 app.use('/', index);
 app.use('/users', users);
 app.use('/session', session);
-app.use('/chats', chat);
+app.use('/chat', chat);
 app.use('/connections', connections)
 
 

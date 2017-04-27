@@ -4,11 +4,12 @@
       <a class="navbar-brand" href="/">DevConnect</a>
     </div>
     <ul class="nav navbar-nav">
-      <li><a href="/connections">Find Connections</a></li>
-      <li><a href="/users">Your Profile</a></li>
-      <li><form action="/session?_method=DELETE" method="POST">
+      <li><a class="nav-color" href="/connections">Find Connections</a></li>
+      <li><a class="nav-color" href="/users">Your Profile</a></li>
+        </ul>
+      <form class="nav-logout" action="/session?_method=DELETE" method="POST">
         <button type="submit">Logout</button>
-      </form></li>
-    </ul>
+      </form>
+
   </div>
 </nav>

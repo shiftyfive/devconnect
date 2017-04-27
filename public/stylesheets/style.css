@@ -125,7 +125,20 @@ span.input-group-addon i {
 	text-align: center;
 }
 
+.navbar-brand{
+  font-size: 30px;
+}
 
 .navbar{
   background-color: black;
+}
+
+.nav-color{
+  color: white !important;
+  font-size: 18px;
+}
+
+.nav-logout{
+  float: right;
+  padding-top: 10px;
 }

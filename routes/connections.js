@@ -27,5 +27,16 @@ router.get('/', authorize, (req, res, next) => {
   })
 })
 
+router.get('/:id', (req, res, next) => {
+  let id = req.params.id
+
+  knex('users').select('*').where({ id }).first()
+  .then(user => {
+
+    console.log(user);
+    res.render('connections/show', user)
+  })
+})
+
 
 module.exports = router;

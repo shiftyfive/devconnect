@@ -25,7 +25,10 @@
   </head>
   <body>
 
-    {{>navbar }}
+    {{#if user.userId }}
+      {{>navbar }}
+    {{/if }}
+
     {{{body}}}
 
   </body>

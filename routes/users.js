@@ -29,10 +29,11 @@ router.get('/edit', authorize, (req, res, next) => {
 router.get('/', authorize, (req, res, next) => {
   const { userId } = req.session
   const id = userId
+  console.log(res.locals);
 
-  knex('users').select('*').where({ id }).then(user => {
+  knex('users').select('*').where({ id }).then(userData => {
 
-    res.render('users/profile', { user })
+    res.render('users/profile', { userData })
   })
 })
 

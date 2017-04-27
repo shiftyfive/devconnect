@@ -6,6 +6,9 @@ exports.up = (knex) => {
     table.string('user_name').notNullable();
     table.string('email').unique().notNullable();
     table.text('img_url');
+    table.text('twitter');
+    table.text('github');
+    table.text('linkedin');
     table.text('bio');
     table.string('skills');
     table.specificType('hashed_password', 'char(60)')

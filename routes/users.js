@@ -47,6 +47,9 @@ router.put('/', (req, res, next) => {
     user_name: req.body.user_name,
     email: req.body.email,
     img_url: req.body.img_url,
+    twitter: req.body.twitter,
+    github: req.body.github,
+    linkedin: req.body.linkedin,
     bio: req.body.bio,
     skills: req.body.skills,
   }

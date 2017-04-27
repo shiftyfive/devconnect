@@ -18,15 +18,29 @@ const authorize = (req, res, next) => {
 router.get('/', authorize, (req, res, next) => {
   const { userId } = req.session
   const id = userId
+
+  // knex('connections')
+  //   .where('user_id1', id)
+  //   .orWhere('user_id2', id)
+  //   .andWhere('is_connected', true)
+  //   .then(connections => {
+  //     let ids = connections.filter(notMyId)
+  //     promise.all(ids) // then get info
+
+  .then(connections => {
+
+    console.log(connections);
+    res.send(connections)
+  })
 })
 
-
-
-// // Index all new connections the user could have
-// router.get()
+// // // Index all new connections the user could have
+// // router.get('/find', (req, res, next) => {
 //
-// // Index all pending friend requests a user has
-// router.get()
+// })
+//
+// // // Index all pending friend requests a user has
+// // router.get()
 
 
 module.exports = router;

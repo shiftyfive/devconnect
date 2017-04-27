@@ -1,21 +1,24 @@
 <div class="container col-xs-12">
 
           <div class="sidebar col-xs-2">
-          <h5><strong>Prep By Category</strong></h5>
-          <ul class="list-unstyled">
-            <li><a href="#" id="people">People</a></li>
-            <li><a href="#" id="pets">Pets</a></li>
-            <li><a href="#" id="boats">Boats</a></li>
-            <li><a href="#" id="sale">Sale Items</a></li>
-          </ul>
-          <hr>
-          <h5><strong>Prep By Price</strong></h5>
-          <ul class="list-unstyled">
-            <li><a href="#" id="under50">Under $50</li>
-            <li><a href="#" id="50to100">$50-$100</li>
-            <li><a href="#" id="100to750">$100-$950</li>
-            <li><a href="#" id="over950">Over $950</li>
-          </ul>
+            <h2>Filter Connections</h2>
+            <div class="dropdown">
+              <button onclick="myFunction()" class="dropbtn">Location</button>
+              <div id="myDropdown" class="dropdown-content">
+                <a href="#">Austin</a>
+                <a href="#">Portland</a>
+                <a href="#">San Francisco</a>
+                <a href="#">Seattle</a>
+              </div>
+            </div>
+            <div class="dropdown">
+              <button onclick="myFunction()" class="dropbtn">Stack</button>
+              <div id="myDropdown" class="dropdown-content">
+                <a href="#">Front End</a>
+                <a href="#">Back End</a>
+                <a href="#">Full Stack</a>
+              </div>
+            </div>
         </div>
 
       <!-- <div class="row"> -->
@@ -45,21 +48,3 @@
           {{/each}}
   </div>
 </div>
-
-
-<!-- <div class="dropdown">
-  <button onclick="myFunction()" class="dropbtn">Stack</button>
-  <div id="myDropdown" class="dropdown-content">
-    <a href="#">Front End</a>
-    <a href="#">Back End</a>
-    <a href="#">Full Stack</a>
-  </div>
-</div>
-<div class="dropdown">
-  <button onclick="myFunction()" class="dropbtn">Stack</button>
-  <div id="myDropdown" class="dropdown-content">
-    <a href="#">Front End</a>
-    <a href="#">Back End</a>
-    <a href="#">Full Stack</a>
-  </div>
-</div> -->

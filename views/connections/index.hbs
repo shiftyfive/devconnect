@@ -1,6 +1,6 @@
 <div class="col-md-12">
       <!-- <div class="row"> -->
-          {{#each user}}
+          {{#each users}}
           <div class="col-md-6 activity"
             data-id="{{ users }}"
             data-category="{{ username }} {{ location }} {{ stack }} {{ age }} {{ gender }}">
@@ -10,17 +10,17 @@
               </div> <!-- panel heading -->
               <div class="panel-body text-center"> <!-- panel body -->
                 <div class="col-md-6">
-                  <img class="img_url" src="{{img_url}}" alt="{{username}">
+                  <img src={{img_url}} alt={{user_name}} width="250">
                 </div>
                 <div class="col-md-6 text-center">
                  <ul class="text-left">
-                   <li class="li-attr">Username: </li>
-                   <li class="li-attr">Location</li>
-                   <li class="li-attr">Stack:</li>
-                   <li class="li-attr">Age:</li>
-                   <li class="li-attr">Gender:</li>
+                   <li class="li-attr">Username: {{user_name}}</li>
+                   <li class="li-attr">Location: TO FINISH</li>
+                   <li class="li-attr">Stack: TO FINISH </li>
+                   <li class="li-attr">Age: TO FINISH</li>
+                   <li class="li-attr">Gender: TO FINISH</li>
                  </ul>
-                 <span class="label label-primary">{{username}}</span>
+                 <span class="label label-primary">{{user_name}}</span>
                 </div>
               </div>
               </div> <!-- panel body -->

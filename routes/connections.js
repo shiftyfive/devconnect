@@ -14,6 +14,17 @@ const authorize = (req, res, next) => {
   next()
 }
 
+
+router.get('/:id', (req, res, next) => {
+  let id = req.params.id
+
+  knex('users').select('*').where({ id }).first()
+  .then(user => {
+
+    res.render('connections/show', user)
+  })
+})
+
 // Index all other users so user csn begin filtering
 router.get('/', authorize, (req, res, next) => {
   const { userId } = req.session
@@ -27,16 +38,6 @@ router.get('/', authorize, (req, res, next) => {
   })
 })
 
-router.get('/:id', (req, res, next) => {
-  let id = req.params.id
-
-  knex('users').select('*').where({ id }).first()
-  .then(user => {
-
-    console.log(user);
-    res.render('connections/show', user)
-  })
-})
 
 
 module.exports = router;

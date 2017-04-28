@@ -10,7 +10,7 @@
 						<div class="cols-sm-10">
 							<div class="input-group">
 								<span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
-								<input type="text" class="form-control" name="first_name" id="first_name" value="{{ user.first_name }}" required>
+								<input type="text" class="form-control" name="first_name" id="first_name" value="{{ users.first_name }}" required>
 							</div>
 						</div>
 					</div>
@@ -20,17 +20,17 @@
 						<div class="cols-sm-10">
 							<div class="input-group">
 								<span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
-								<input type="text" class="form-control" name="last_name" id="last_name" value="{{ user.last_name }}" required>
+								<input type="text" class="form-control" name="last_name" id="last_name" value="{{ users.last_name }}" required>
 							</div>
 						</div>
 					</div>
 
 					<div class="form-group">
-						<label for="gender" class='cols-sm-2 control-label'>gender</label>
+						<label for="gender" class='cols-sm-2 control-label'>Gender</label>
 						<div class="cols-sm-10">
 							<div class="input-group">
 								<span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
-								<select class="form-control" id="gender" name="gender">
+								<select selected="{{users.gender}}" class="form-control" id="gender" name="gender">
 									<option value="Female">Female</option>
 									<option value="Male">Male</option>
 									<option value="Other">Other</option>
@@ -58,13 +58,13 @@
 						<div class="cols-sm-10">
 							<div class="input-group">
 								<span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
-								<input type="text" class="form-control" name="user_name" id="user_name" value="{{ user.user_name }}" required>
+								<input type="text" class="form-control" name="user_name" id="user_name" value="{{ users.user_name }}" required>
 							</div>
 						</div>
 					</div>
 
 					<div class="form-group">
-						<label for="developer_type" class='cols-sm-2 control-label'>Developer Type</label>
+						<label for="developer_type" class='cols-sm-2 control-label'>Location</label>
 						<div class="cols-sm-10">
 							<div class="input-group">
 								<span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
@@ -85,7 +85,7 @@
 						<div class="cols-sm-10">
 							<div class="input-group">
 								<span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
-								<input type="text" class="form-control" name="email" id="email" value="{{ user.email }}" required>
+								<input type="text" class="form-control" name="email" id="email" value="{{ users.email }}" required>
 							</div>
 						</div>
 					</div>
@@ -95,7 +95,7 @@
 						<div class="cols-sm-10">
 							<div class="input-group">
 								<span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
-								<input type="text" class="form-control" name="img_url" id="img_url" value="{{ user.img_url }}" placeholder="Enter picture URL">
+								<input type="text" class="form-control" name="img_url" id="img_url" value="{{ users.img_url }}" placeholder="Enter picture URL">
 							</div>
 						</div>
 					</div>
@@ -105,7 +105,7 @@
 						<div class="cols-sm-10">
 							<div class="input-group">
 								<span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
-								<input type="text" class="form-control" name="twitter" id="twitter" value="{{ user.twitter }}" placeholder="Enter Twitter URL">
+								<input type="text" class="form-control" name="twitter" id="twitter" value="{{ users.twitter }}" placeholder="Enter Twitter URL">
 							</div>
 						</div>
 					</div>
@@ -115,7 +115,7 @@
 						<div class="cols-sm-10">
 							<div class="input-group">
 								<span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
-								<input type="text" class="form-control" name="github" id="github" value="{{ user.github }}" placeholder="Enter Github Link">
+								<input type="text" class="form-control" name="github" id="github" value="{{ users.github }}" placeholder="Enter Github Link">
 							</div>
 						</div>
 					</div>
@@ -125,7 +125,7 @@
 						<div class="cols-sm-10">
 							<div class="input-group">
 								<span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
-								<input type="text" class="form-control" name="linkedin" id="linkedin" value="{{ user.linkedin }}" placeholder="Enter LinkedIn URL">
+								<input type="text" class="form-control" name="linkedin" id="linkedin" value="{{ users.linkedin }}" placeholder="Enter LinkedIn URL">
 							</div>
 						</div>
 					</div>
@@ -135,7 +135,7 @@
 						<div class="cols-sm-10">
 							<div class="input-group">
 								<span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
-								<input type="text" class="form-control" name="bio" id="bio" value="{{ user.bio }}" placeholder="Share who you are">
+								<input type="text" class="form-control" name="bio" id="bio" value="{{ users.bio }}" placeholder="Share who you are">
 							</div>
 						</div>
 					</div>
@@ -145,7 +145,7 @@
 						<div class="cols-sm-10">
 							<div class="input-group">
 								<span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
-								<input type="text" class="form-control" name="skills" id="skills" value="{{ user.skills }}" placeholder="What are your skills">
+								<input type="text" class="form-control" name="skills" id="skills" value="{{ users.skills }}" placeholder="What are your skills">
 							</div>
 						</div>
 					</div>

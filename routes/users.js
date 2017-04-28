@@ -20,8 +20,8 @@ router.get('/edit', authorize, (req, res, next) => {
   const id = userId
 
   knex('users').select('*').where({ id }).first()
-  .then(user => {
-    res.render('users/edit', { user })
+  .then(users => {
+    res.render('users/edit', { users })
   })
 })
 

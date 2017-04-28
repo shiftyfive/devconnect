@@ -130,7 +130,9 @@ span.input-group-addon i {
 }
 
 .navbar{
-  background-color: black;
+  background-color: #373737;
+  padding-bottom: 20px;
+  padding-top: 20px;
 }
 
 .nav-color{
@@ -167,4 +169,15 @@ span.input-group-addon i {
 
 .img-circle {
     border-radius: 50%;
+
+.footer-backgroundz {
+  background-color: #373737;
+  padding-bottom: 20px;
+  padding-top: 30px;
+}
+
+.footer-float {
+  float: right;
+  color: white;
+
 }

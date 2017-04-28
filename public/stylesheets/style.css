@@ -158,17 +158,19 @@ span.input-group-addon i {
 
 .index-username{
     color: #00c2dd !important;
-    font-size: 35px;
+    font-size: 20px;
     padding-bottom: 20px;
 }
 
 .index-info{
   text-align: left;
   font-size: 20px;
+  padding-left: 30px;
 }
 
 .img-circle {
-    border-radius: 50%;
+  border-radius: 50%;
+}
 
 .footer-backgroundz {
   background-color: #373737;
@@ -179,5 +181,4 @@ span.input-group-addon i {
 .footer-float {
   float: right;
   color: white;
-
 }

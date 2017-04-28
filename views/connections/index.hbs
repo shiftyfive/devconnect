@@ -2,23 +2,22 @@
           <div class="sidebar col-xs-2">
             <h2>Filter Connections</h2>
             <div class="dropdown">
-              <button onclick="myFunction()" class="dropbtn">Location</button>
-              <div id="myDropdown" class="dropdown-content">
-                <a href="#">Austin</a>
-                <a href="#">Portland</a>
-                <a href="#">San Francisco</a>
-                <a href="#">Seattle</a>
-              </div>
+              <select id="location" name="location">
+                 <option value="austin">Austin</option>
+                 <option value="sanfrancisco">San Francisco</option>
+                 <option value="portland">Portland</option>
+                 <option value="seattle">Seattle</option>
+              </select>
             </div>
             <div class="dropdown">
-              <button onclick="myFunction()" class="dropbtn">Stack</button>
-              <div id="myDropdown" class="dropdown-content">
-                <a href="#">Front End</a>
-                <a href="#">Back End</a>
-                <a href="#">Full Stack</a>
+              <select id="stack" name="stack">
+                <option value="frontend">Front End</a>
+                <option value="backend">Back End</a>
+                <option value="fullstack">Full Stack</a>
+                </select>
               </div>
             </div>
-        </div>
+
       <div class="col-xs-10">
           {{#each users}}
           <div class="col-xs-6"

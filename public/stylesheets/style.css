@@ -142,3 +142,14 @@ span.input-group-addon i {
   float: right;
   padding-top: 10px;
 }
+
+.blue-time {
+  color: #00c2dd !important;
+}
+
+.mega-logo {
+  color: #373737 !important;
+  font-size: 75px;
+  padding-bottom: 20px;
+  text-align: center;
+}

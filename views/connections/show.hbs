@@ -1,5 +1,5 @@
 <div class="container profile-container">
-{{#each user }}
+{{#each users }}
 <div class="profile-header col-xs-12">
     <div class="profile-pic col-xs-3">
       <img class="profile-img" src={{img_url}} width="250">
@@ -22,10 +22,6 @@
 </div>
 <div class="profile-body col-xs-12">
   <div class="sidebar col-xs-3">
-    <div class="edit-btn">
-      <a href="/users/edit" type="button" name="button" class="btn btn-info">Edit Profile</a>
-      <br><br>
-    </div>
   </div>
   <div class="profile-bio col-xs-9"><h2>Bio</h2>{{bio}}</div>
   <div class="profile-skills col-xs-9"><h2>Skills</h2>{{skills}}</div>

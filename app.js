@@ -43,8 +43,7 @@ app.use(cookieSession({
   secure: app.get('env') === 'production'
 }));
 
-// uncomment after placing your favicon in /public
-// app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
+app.use(favicon(path.join(__dirname, 'public', 'assets', 'img', 'favicon.ico')))
 
 app.use((req, res, next) => {
   if (req.session.userId) res.locals.user = req.session

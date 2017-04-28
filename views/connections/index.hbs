@@ -1,5 +1,4 @@
 <div class="container-fluid">
-
           <div class="sidebar col-xs-2">
             <h2>Filter Connections</h2>
             <div class="dropdown">
@@ -20,8 +19,6 @@
               </div>
             </div>
         </div>
-
-      <!-- <div class="row"> -->
       <div class="col-xs-10">
           {{#each users}}
           <div class="col-xs-6"
@@ -31,22 +28,19 @@
               <div class="panel-body text-center"> <!-- panel body -->
                 <div class="col-xs-6">
                   <a href="/connections/{{ this.id }}">
-                    <img src="{{img_url}}" alt={{user_name}} width="250">
+                    <img class= "img-circle" src="{{img_url}}" alt={{user_name}} width="250">
                   </a>
                 </div>
                 <div class="col-xs-6 text-center">
-                 <ul class="text-left">
-                   <li class="li-attr">Username: {{user_name}}</li>
-                   <li class="li-attr">Location: {{location}}</li>
-                   <li class="li-attr">Stack: {{developer_type}} </li>
-                   <li class="li-attr">Age: {{age}}</li>
-                   <li class="li-attr">Gender: {{gender}}</li>
-                 </ul>
+                  <h4 class="index-username"><strong>{{user_name}}</strong></h4>
+                  <p class="index-info">{{location}}</p>
+                  <p class="index-info">{{developer_type}}</p>
+                  <p class="index-info">{{age}}</p>
+                  <p class="index-info">{{gender}}</p>
                 </div>
               </div>
-              </div> <!-- panel body -->
-            </div> <!-- panel default -->
-          <!-- </div> -->
+              </div>
+            </div>
           {{/each}}
   </div>
 </div>

@@ -29,9 +29,7 @@ directly on profile.
 - Enjoy DevConnect!
 
 ### DEMO IMAGE
-
-![app image](https://raw.githubusercontent.com/shiftyfive/devconnect/tree/master/public/assets/devconnect-demo.png)
+![app image](https://github.com/shiftyfive/devconnect/blob/master/public/assets/img/devconnect-demo.png?raw=true)
 
 ### DEVELOPMENT TEAM
-
-![tema image](https://raw.githubusercontent.com/shiftyfive/devconnect/tree/master/public/assets/user_placeholder.png)
+![team image](https://github.com/shiftyfive/devconnect/blob/master/public/assets/img/our-team.png?raw=true)

@@ -33,3 +33,9 @@ directly on profile.
 
 ### DEVELOPMENT TEAM
 ![team image](https://github.com/shiftyfive/devconnect/blob/master/public/assets/img/our-team.png?raw=true)
+
+Stefan Baatz - https://github.com/Baatzy
+
+Joshua Warren - https://github.com/shiftyfive
+
+Torin Longaker - https://github.com/TorinL
